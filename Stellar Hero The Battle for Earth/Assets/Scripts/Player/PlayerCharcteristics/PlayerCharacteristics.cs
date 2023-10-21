@@ -32,32 +32,10 @@ public class PlayerCharacteristics : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Íĺâĺđíîĺ čě˙ ďŕđŕěĺňđŕ: " + characteristic);
+            Debug.LogWarning("Not found: " + characteristic);
             return 0.0f;
         }
     }
-
-    //public void SetValue(Characteristics characteristic, float value)
-    //{
-    //    switch (characteristic)
-    //    {
-    //        case Characteristics.Speed: 
-    //            _speed = value;
-    //            break;
-    //        case Characteristics.Damage:
-    //            _damage = value;
-    //            break;
-    //        case Characteristics.AttackSpeed: 
-    //            _attackSpeed = value;
-    //            break;
-    //        case Characteristics.MaxHealth: 
-    //            _maxHealth = value;
-    //            break;
-    //        default:
-    //            Debug.LogWarning("Íĺâĺđíîĺ čě˙ ďŕđŕěĺňđŕ: " + characteristic);
-    //            break;
-    //    }
-    //}
 
     public void AddValue(Characteristics characteristic, float value)
     {
@@ -65,68 +43,12 @@ public class PlayerCharacteristics : MonoBehaviour
         {
             characteristics[characteristic] += value;
         }
-        else
-        {
-            Debug.LogWarning("Íĺâĺđíîĺ čě˙ ďŕđŕěĺňđŕ: " + characteristic);
-        switch (characteristic)
-        {
-            case Characteristics.Speed: return _speed;
-            case Characteristics.Damage: return _damage;
-            case Characteristics.AttackSpeed: return _attackSpeed;
-            case Characteristics.MaxHealth: return _maxHealth;
-            default:
-                Debug.LogWarning("Íĺâĺđíîĺ čě˙ ďŕđŕěĺňđŕ: " + characteristic);
-                return 0.0f;
-        }
-    }
-
-    public void SetValue(Characteristics characteristic, float value)
-    {
-        switch (characteristic)
-        {
-            case Characteristics.Speed: 
-                _speed = value;
-                break;
-            case Characteristics.Damage:
-                _damage = value;
-                break;
-            case Characteristics.AttackSpeed: 
-                _attackSpeed = value;
-                break;
-            case Characteristics.MaxHealth: 
-                _maxHealth = value;
-                break;
-            default:
-                Debug.LogWarning("Íĺâĺđíîĺ čě˙ ďŕđŕěĺňđŕ: " + characteristic);
-                break;
-        }
-    }
-
-    public void AddValue(Characteristics characteristic, float value)
-    {
-        switch (characteristic)
-        {
-            case Characteristics.Speed:
-                _speed += value;
-                break;
-            case Characteristics.Damage:
-                _damage += value;
-                break;
-            case Characteristics.AttackSpeed:
-                _attackSpeed += value;
-                break;
-            case Characteristics.MaxHealth:
-                _maxHealth += value;
-                break;
-            default:
-                Debug.LogWarning("Íĺâĺđíîĺ čě˙ ďŕđŕěĺňđŕ: " + characteristic);
-                break;
-        }
+        else Debug.LogWarning("Not found: " + characteristic);
     }
 
     private void Initialize()
     {
-        //Çŕăđóçęŕ ďŕđŕěĺňđîâ
+        //Load Characteristics
         characteristics[Characteristics.Speed] = _speed;
         characteristics[Characteristics.Damage] = _damage;
         characteristics[Characteristics.AttackSpeed] = _attackSpeed;
